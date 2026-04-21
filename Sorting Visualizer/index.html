@@ -1,0 +1,125 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>SortLab — Sorting Visualizer</title>
+  <meta name="description" content="An immersive, animated sorting visualizer. Visualize Bubble, Selection, Insertion, Merge, Quick Sort and more in real-time." />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link href="https://fonts.googleapis.com/css2?family=Space+Mono:wght@400;700&family=Syne:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="style.css" />
+</head>
+<body>
+  <div class="noise-overlay"></div>
+
+  <header>
+    <div class="logo">
+      <span class="logo-icon">⬡</span>
+      <span class="logo-text">Sort<strong>Lab</strong></span>
+    </div>
+    <p class="tagline">Sorting Visualizer</p>
+  </header>
+
+  <main>
+    <!-- Controls Panel -->
+    <section class="controls-panel">
+      <div class="control-group">
+        <label for="array-size">Array Size</label>
+        <div class="slider-row">
+          <input type="range" id="array-size" min="10" max="100" value="40" />
+          <span id="size-display" class="value-badge">40</span>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label for="speed">Speed</label>
+        <div class="slider-row">
+          <input type="range" id="speed" min="1" max="10" value="5" />
+          <span id="speed-display" class="value-badge">5</span>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label>Array Pattern</label>
+        <div class="btn-group">
+          <button class="pattern-btn active" data-pattern="random">Random</button>
+          <button class="pattern-btn" data-pattern="nearly-sorted">Nearly Sorted</button>
+          <button class="pattern-btn" data-pattern="reversed">Reversed</button>
+          <button class="pattern-btn" data-pattern="few-unique">Few Unique</button>
+        </div>
+      </div>
+
+      <div class="control-group">
+        <label>Mode</label>
+        <div class="btn-group">
+          <button class="mode-btn active" data-mode="single">Single</button>
+          <button class="mode-btn" data-mode="compare">Compare (2)</button>
+          <button class="mode-btn" data-mode="race">Race All</button>
+        </div>
+      </div>
+    </section>
+
+    <!-- Algorithm Selector -->
+    <section class="algo-selector">
+      <h2 class="section-title">Select Algorithm<span class="title-accent">s</span></h2>
+      <div class="algo-grid" id="algo-grid">
+        <!-- Populated by JS -->
+      </div>
+    </section>
+
+    <!-- Action Bar -->
+    <div class="action-bar">
+      <button id="btn-generate" class="action-btn secondary">
+        <span class="btn-icon">↺</span> Generate Array
+      </button>
+      <button id="btn-sort" class="action-btn primary">
+        <span class="btn-icon">▶</span> Sort
+      </button>
+      <button id="btn-pause" class="action-btn pause" disabled>
+        <span class="btn-icon">⏸</span> Pause
+      </button>
+      <button id="btn-reset" class="action-btn danger">
+        <span class="btn-icon">■</span> Reset
+      </button>
+    </div>
+
+    <!-- Visualizer Stage -->
+    <section class="visualizer-stage" id="visualizer-stage">
+      <!-- Panels injected by JS -->
+    </section>
+
+    <!-- Stats Dashboard -->
+    <section class="stats-dashboard" id="stats-dashboard">
+      <!-- Stats injected by JS -->
+    </section>
+
+    <!-- Complexity Table -->
+    <section class="complexity-section">
+      <h2 class="section-title">Complexity Reference</h2>
+      <div class="table-wrapper">
+        <table class="complexity-table" id="complexity-table">
+          <thead>
+            <tr>
+              <th>Algorithm</th>
+              <th>Best</th>
+              <th>Average</th>
+              <th>Worst</th>
+              <th>Space</th>
+              <th>Stable</th>
+            </tr>
+          </thead>
+          <tbody id="complexity-body">
+            <!-- Populated by JS -->
+          </tbody>
+        </table>
+      </div>
+    </section>
+  </main>
+
+  <footer>
+    <p>SortLab — Sorting Visualizer · Built for understanding algorithms through visualization</p>
+  </footer>
+
+  <script src="script.js"></script>
+</body>
+</html>
