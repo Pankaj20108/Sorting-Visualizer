@@ -56,5 +56,5 @@ This project helps users understand how different sorting algorithms work throug
 
 1. Clone the repository:
    ```bash
-   git clone https://github.com/your-username/sortlab.git
+   git clone https://github.com/Pankaj20108/sortlab.git
    cd sortlab
